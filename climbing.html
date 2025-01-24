@@ -10,6 +10,8 @@
       display: none; /* Initially hide the gallery */
       margin-top: 20px;
       text-align: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .hidden-gallery figure {
@@ -29,6 +31,8 @@
       cursor: pointer;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      max-width: 100%; /* Prevent cover images from growing too large */
+      height: auto;
     }
 
     .album-cover:hover {
@@ -38,150 +42,113 @@
 </head>
 <body style="margin-top: 0px; width: 50%;">
 
-   <div id="outer">
-   <div id="menu" style="width:80%; margin:auto;">
-    <ul style="list-style-type:none; padding:0; text-align:center;">
-      <li style="display:inline; margin:0 10px;"><a href="index.html">Home</a></li>
-      <li style="display:inline; margin:0 10px;"><a href="./research.html">Research</a></li>
-      <li style="display:inline; margin:0 10px;"><a href="./climbing.html" class="active">Climbing</a></li>
-    </ul>
-  </div>
-
-  <center>
-    <table width="80%" border="0" cellspacing="3" cellpadding="3">
-      <tr>
-        <td align="center" bgcolor="white">
-          <h1 style="font-size:50px; font-weight:normal;">Climbing</h1>
-          <p style="font-size:16px;">
-            <em> Some of my climbing.</em>
-          </p>
-        </td>
-      </tr>
-    </table>
-  </center>
-
-  <div style="width:80%; margin:auto; text-align:center;">
-    <h2 style="font-size:30px; font-weight:normal; margin-bottom:20px;">Gallery</h2>
-
-    <!-- Gallery Section -->
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-      
-      <!-- Item 1 (Album Cover) -->
-      <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('shangriLaGallery')">
-        <img src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La" class="album-cover">
-        <figcaption style="margin-top:10px; font-size:16px; color:#555;">Shangri-La, Crouching Tiger 5.10c. September 29, 2024.</figcaption>
-      </figure>
-
-      <!-- Item 2 (Album Cover) -->
-      <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('billsWallGallery')">
-        <img src="graphics/climbing/Bills-Wall_Kissing_Cousins.jpg" alt="Bill's Wall" class="album-cover">
-        <figcaption style="margin-top:10px; font-size:16px; color:#555;">Bill's Wall, Kissing Cousins 5.10b. October 26, 2024.</figcaption>
-      </figure>
-
-      <!-- Item 3 (Album Cover) -->
-      <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('hardRockGallery')">
-        <img src="graphics/climbing/Hard_rock_muffin.jpg" alt="Hard Rock" class="album-cover">
-        <figcaption style="margin-top:10px; font-size:16px; color:#555;">Hard Rock, American Fork, Tasty Muffins. September 6, 2024.</figcaption>
-      </figure>
-
-      <!-- Item 4 (Album Cover) -->
-      <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('indianCreekGallery')">
-        <img src="graphics/climbing/Indian-creek_sparkling_gefilte_fish.jpg" alt="Indian Creek" class="album-cover">
-        <figcaption style="margin-top:10px; font-size:16px; color:#555;">Indian Creek, Sparkling Gefilte Fish 5.10c, November 8, 2022.</figcaption>
-      </figure>
-
-      <!-- Item 5 (Album Cover) -->
-      <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('lunarEclipseGallery')">
-        <img src="graphics/climbing/lunar_ecplise.jpg" alt="Lunar Eclipse" class="album-cover">
-        <figcaption style="margin-top:10px; font-size:16px; color:#555;">Indian Creek, Lunar Eclipse, November 8, 2022.</figcaption>
-      </figure>
-
+  <div id="outer">
+    <div id="menu" style="width:80%; margin:auto;">
+      <ul style="list-style-type:none; padding:0; text-align:center;">
+        <li style="display:inline; margin:0 10px;"><a href="index.html">Home</a></li>
+        <li style="display:inline; margin:0 10px;"><a href="./research.html">Research</a></li>
+        <li style="display:inline; margin:0 10px;"><a href="./climbing.html" class="active">Climbing</a></li>
+      </ul>
     </div>
+
+    <center>
+      <table width="80%" border="0" cellspacing="3" cellpadding="3">
+        <tr>
+          <td align="center" bgcolor="white">
+            <h1 style="font-size:50px; font-weight:normal;">Climbing</h1>
+            <p style="font-size:16px;">
+              <em> Some of my climbing.</em>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </center>
+
+    <div style="width:80%; margin:auto; text-align:center;">
+      <h2 style="font-size:30px; font-weight:normal; margin-bottom:20px;">Gallery</h2>
+
+      <!-- Gallery Section -->
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+        
+        <!-- Item 1 (Album Cover) -->
+        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('shangriLaGallery')">
+          <img src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La" class="album-cover">
+          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Shangri-La, Crouching Tiger 5.10c. September 29, 2024.</figcaption>
+        </figure>
+
+        <!-- Item 2 (Album Cover) -->
+        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('billsWallGallery')">
+          <img src="graphics/climbing/Bills-Wall_Kissing_Cousins.jpg" alt="Bill's Wall" class="album-cover">
+          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Bill's Wall, Kissing Cousins 5.10b. October 26, 2024.</figcaption>
+        </figure>
+
+        <!-- Item 3 (Album Cover) -->
+        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('hardRockGallery')">
+          <img src="graphics/climbing/Hard_rock_muffin.jpg" alt="Hard Rock" class="album-cover">
+          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Hard Rock, American Fork, Tasty Muffins. September 6, 2024.</figcaption>
+        </figure>
+
+        <!-- Item 4 (Album Cover) -->
+        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('indianCreekGallery')">
+          <img src="graphics/climbing/Indian-creek_sparkling_gefilte_fish.jpg" alt="Indian Creek" class="album-cover">
+          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Indian Creek, Sparkling Gefilte Fish 5.10c, November 8, 2022.</figcaption>
+        </figure>
+
+        <!-- Item 5 (Album Cover) -->
+        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('lunarEclipseGallery')">
+          <img src="graphics/climbing/lunar_ecplise.jpg" alt="Lunar Eclipse" class="album-cover">
+          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Indian Creek, Lunar Eclipse, November 8, 2022.</figcaption>
+        </figure>
+
+      </div>
+    </div>
+
+    <!-- Hidden Galleries for Each Album -->
+    
+    <div class="hidden-gallery" id="shangriLaGallery">
+      <figure>
+        <img src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La Image 1">
+        <figcaption>Shangri-La, Second View. September 29, 2024.</figcaption>
+      </figure>
+      <figure>
+        <img src="graphics/climbing/Shangri-La/damien.jpg" alt="Shangri-La Image 2">
+        <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
+      </figure>
+      <figure>
+        <img src="graphics/climbing/Shangri-La/tree.jpg" alt="Shangri-La Image 2">
+        <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
+      </figure>
+      <figure>
+        <img src="graphics/climbing/Shangri-La/julia.jpg" alt="Shangri-La Image 2">
+        <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
+      </figure>
+    </div>
+
+    <div class="hidden-gallery" id="billsWallGallery">
+      <figure>
+        <img src="graphics/climbing/Bills-Wall_Second_View.jpg" alt="Bill's Wall Image 1">
+        <figcaption>Bill's Wall, Second View. October 26, 2024.</figcaption>
+      </figure>
+      <figure>
+        <img src="graphics/climbing/Bills-Wall_Top_Out.jpg" alt="Bill's Wall Image 2">
+        <figcaption>Bill's Wall, Top Out. October 26, 2022024.</figcaption>
+      </figure>
+    </div>
+
+    <!-- Additional galleries can be added below -->
   </div>
 
-  <!-- Hidden Galleries for Each Album -->
-  
-  <div class="hidden-gallery" id="shangriLaGallery">
-    <figure>
-      <img src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La Image 1">
-      <figcaption>Shangri-La, Second View. September 29, 2024.</figcaption>
-    </figure>
-    <figure>
-      <img src="graphics/climbing/Shangri-La/damien.jpg" alt="Shangri-La Image 2">
-      <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
-    </figure>
-    <figure>
-      <img src="graphics/climbing/Shangri-La/tree.jpg" alt="Shangri-La Image 2">
-      <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
-    </figure>
-    <figure>
-      <img src="graphics/climbing/Shangri-La/julia.jpg" alt="Shangri-La Image 2">
-      <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
-    </figure>
-    <!-- Add more images here -->
-  </div>
-
-  <div class="hidden-gallery" id="billsWallGallery">
-    <figure>
-      <img src="graphics/climbing/Bills-Wall_Second_View.jpg" alt="Bill's Wall Image 1">
-      <figcaption>Bill's Wall, Second View. October 26, 2024.</figcaption>
-    </figure>
-    <figure>
-      <img src="graphics/climbing/Bills-Wall_Top_Out.jpg" alt="Bill's Wall Image 2">
-      <figcaption>Bill's Wall, Top Out. October 26, 2024.</figcaption>
-    </figure>
-    <!-- Add more images here -->
-  </div>
-
-  <div class="hidden-gallery" id="hardRockGallery">
-    <figure>
-      <img src="graphics/climbing/Hard_Rock_Second_View.jpg" alt="Hard Rock Image 1">
-      <figcaption>Hard Rock, Second View. September 6, 2024.</figcaption>
-    </figure>
-    <figure>
-      <img src="graphics/climbing/Hard_Rock_Top_Out.jpg" alt="Hard Rock Image 2">
-      <figcaption>Hard Rock, Top Out. September 6, 2024.</figcaption>
-    </figure>
-    <!-- Add more images here -->
-  </div>
-
-  <div class="hidden-gallery" id="indianCreekGallery">
-    <figure>
-      <img src="graphics/climbing/Indian_Creek_Second_View.jpg" alt="Indian Creek Image 1">
-      <figcaption>Indian Creek, Second View. November 8, 2022.</figcaption>
-    </figure>
-    <figure>
-      <img src="graphics/climbing/Indian_Creek_Top_Out.jpg" alt="Indian Creek Image 2">
-      <figcaption>Indian Creek, Top Out. November 8, 2022.</figcaption>
-    </figure>
-    <!-- Add more images here -->
-  </div>
-
-  <div class="hidden-gallery" id="lunarEclipseGallery">
-    <figure>
-      <img src="graphics/climbing/Lunar_Eclipse_Second_View.jpg" alt="Lunar Eclipse Image 1">
-      <figcaption>Lunar Eclipse, Second View. November 8, 2022.</figcaption>
-    </figure>
-    <figure>
-      <img src="graphics/climbing/Lunar_Eclipse_Top_Out.jpg" alt="Lunar Eclipse Image 2">
-      <figcaption>Lunar Eclipse, Top Out. November 8, 2022.</figcaption>
-    </figure>
-    <!-- Add more images here -->
-  </div>
-
-</div>
-
-<script>
-  // Function to toggle visibility of the gallery
-  function toggleGallery(galleryId) {
-    const gallery = document.getElementById(galleryId);
-    if (gallery.style.display === "none" || gallery.style.display === "") {
-      gallery.style.display = "flex"; // Show gallery
-    } else {
-      gallery.style.display = "none"; // Hide gallery
+  <script>
+    // Function to toggle visibility of the gallery
+    function toggleGallery(galleryId) {
+      const gallery = document.getElementById(galleryId);
+      if (gallery.style.display === "none" || gallery.style.display === "") {
+        gallery.style.display = "flex"; // Show gallery
+      } else {
+        gallery.style.display = "none"; // Hide gallery
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
 </html>
