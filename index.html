@@ -27,16 +27,18 @@
           
           <p style="font-size:20px; margin-bottom: 10px;">
             Email: 
-            <a id="email-link">ikegriss<b class="block-bots">[spam_blocker]</b>@uw.edu</a>
+            <a id="email-link">grisal@uw.edu</a>
           </p>
-  
+          
           <script>
-            // Populate the mailto link for the email address while hiding it from bots
+            // Sets the mailto link without exposing it in the HTML
             (function () {
-              var user = "ikegriss";
-              var domain = "uw.edu";
-              var element = document.getElementById("email-link");
-              element.href = "mailto:" + user + "@" + domain;
+              const user = "grisal";
+              const domain = "uw.edu";
+              const email = user + "@" + domain;
+              const el = document.getElementById("email-link");
+              el.href = "mailto:" + email;
+              el.textContent = email;
             })();
           </script>
           <p style="font-size:20px;">
