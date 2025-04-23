@@ -71,21 +71,27 @@ tbody tr {
 }
 
 
-#menu
-{
-position: relative;
-height: 3.5em;
-}
+#menu {
+    width: fit-content;
+    margin: 0 auto;
+    height: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-#menu ul
-{
-position: absolute;
-}
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5em; 
+  }
+  
 
 #menu ul li
 {
-position: relative;
-display: inline;
+    display: inline;
 }
 
 #menu ul li a
