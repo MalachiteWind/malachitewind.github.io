@@ -5,42 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link rel="stylesheet" href="ike_styles.css" type="text/css" media="all">
-  <style>
-    .hidden-gallery {
-      display: none; /* Initially hide the gallery */
-      margin-top: 20px;
-      text-align: center;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .hidden-gallery figure {
-      max-width: 300px;
-      display: inline-block;
-      margin: 10px;
-    }
-
-    .hidden-gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .album-cover {
-      cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      max-width: 100%; /* Prevent cover images from growing too large */
-      height: auto;
-    }
-
-    .album-cover:hover {
-      opacity: 0.8;
-    }
-  </style>
 </head>
-<body style="margin-top: 0px; width: 50%;">
+
+<body style="margin-top: 0px;">
 
   <div id="outer">
     <div id="menu">
@@ -57,7 +24,7 @@
           <td align="center" bgcolor="white">
             <h1 style="font-size:50px; font-weight:normal;">Climbing</h1>
             <p style="font-size:16px;">
-              <em> 
+              Checkout my climbs <em> 
                 <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas" target="_blank" rel="noopener noreferrer">
                   Mountain Project
                 </a>
@@ -68,34 +35,34 @@
       </table>
     </center>
 
-    <div style="width:80%; margin:auto; text-align:center;">
-      <h2 style="font-size:30px; font-weight:normal; margin-bottom:20px;">Gallery</h2>
+    <div class="gallery-container">
+      <h2 style="font-size:40px; font-weight:normal; margin-bottom:20px;">Gallery</h2>
 
       <!-- Gallery Section -->
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+      <div class="album-grid">
         
-        <!-- Item 1 (Album Cover) -->
-        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('shangriLaGallery')">
-          <img src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La" class="album-cover">
-          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Shangri-La, Crouching Tiger 5.10c. September 28, 2024.</figcaption>
+        <!-- ShangriLa -->
+        <figure class="album-item" onclick="toggleGallery('shangriLaGallery')">
+          <img src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La">
+          <figcaption>Shangri-La, Crouching Tiger 5.10c. September 28, 2024.</figcaption>
         </figure>
 
-        <!-- Item 2 (Album Cover) -->
-        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('billsWallGallery')">
-          <img src="graphics/climbing/sunshine/Bills-Wall_Kissing_Cousins.jpg" alt="Bill's Wall" class="album-cover">
-          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Bill's Wall, Kissing Cousins 5.10b. October 26, 2024.</figcaption>
+        <!-- Bills Wall -->
+        <figure class="album-item" onclick="toggleGallery('billsWallGallery')">
+          <img src="graphics/climbing/sunshine/Bills-Wall_Kissing_Cousins.jpg" alt="Bill's Wall">
+          <figcaption>Bill's Wall, Kissing Cousins 5.10b. October 26, 2024.</figcaption>
         </figure>
 
-        <!-- Item 3 (Album Cover) -->
-        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('hardRockGallery')">
-          <img src="graphics/climbing/hard-rock/Hard_rock_muffin.jpg" alt="Hard Rock" class="album-cover">
-          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Hard Rock, American Fork, Tasty Muffins. September 6, 2024.</figcaption>
+        <!-- Hard Rock -->
+        <figure class="album-item" onclick="toggleGallery('hardRockGallery')">
+          <img src="graphics/climbing/hard-rock/Hard_rock_muffin.jpg" alt="Hard Rock">
+          <figcaption>Hard Rock, American Fork, Tasty Muffins. September 6, 2024.</figcaption>
         </figure>
 
-        <!-- Item 4 (Album Cover) -->
-        <figure style="max-width:300px; text-align:center;" onclick="toggleGallery('indianCreekGallery')">
-          <img src="graphics/climbing/indian-creek/Indian-creek_sparkling_gefilte_fish.jpg" alt="Indian Creek" class="album-cover">
-          <figcaption style="margin-top:10px; font-size:16px; color:#555;">Indian Creek, Sparkling Gefilte Fish 5.10c, November 8, 2022.</figcaption>
+        <!-- Indian Creek -->
+        <figure class="album-item" onclick="toggleGallery('indianCreekGallery')">
+          <img src="graphics/climbing/indian-creek/Indian-creek_sparkling_gefilte_fish.jpg" alt="Indian Creek">
+          <figcaption>Indian Creek, Sparkling Gefilte Fish 5.10c, November 8, 2022.</figcaption>
         </figure>
 
       </div>
