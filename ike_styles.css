@@ -178,7 +178,7 @@ border-radius: 3px;
 
 /* Container for the gallery section */
 .gallery-container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: auto;
     padding: 0px;
   }
@@ -194,7 +194,7 @@ border-radius: 3px;
   /* Individual album cover item */
   .album-item {
     flex: 1 1 250px;
-    max-width: 300px;
+    max-width: 400px;
     text-align: center;
     cursor: pointer;
   }
@@ -229,7 +229,7 @@ border-radius: 3px;
 }
 .hidden-gallery figure {
     flex: 1 1 250px;
-    max-width: 300px;
+    max-width: 400px;
     margin: 10px;
     text-align: center;
   }
