@@ -1,78 +1,96 @@
-<html style="background-color:#ffffff;">
+<!DOCTYPE html>
+<html>
 <head>
-<meta name="description" content="Ike Griss Salas">
-<title>Ike Griss Salas</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" href="ike_styles.css" type="text/css" media="all">
+  <meta charset="utf-8">
+  <meta name="description" content="Ike Griss Salas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ike Griss Salas</title>
+  <link rel="stylesheet" href="ike_styles.css" type="text/css" media="all">
 </head>
-<body style="max-width: 1200px;;">
 
-<div id="outer">
-   <div id="menu">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="./research.html">Research</a></li>
-      <li><a href="./climbing.html">Climbing</a></li>
-    </ul>
+<body>
+  <div id="outer">
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html" class="active">home</a></li>
+        <li><a href="research.html">research</a></li>
+        <li><a href="climbing.html">climbing</a></li>
+      </ul>
+    </nav>
   </div>
-  </div>
 
-  <center>
-    <table width="80%" border="0" cellspacing="3" cellpadding="3">
-      <tr>
-        <td align="center" bgcolor="white">
-          <h1 style="font-size:50px; font-weight:normal;">Ike Griss Salas</h1>
-          
-          <p style="font-size:20px; margin-bottom: 10px;">
-            Email: 
-            <a id="email-link">grisal@uw.edu</a>
+  <main>
+    <section style="text-align: center; margin-top: 40px; margin-bottom: 50px;">
+      <h1 style="font-size: 50px; font-weight: normal;">Ike Griss Salas</h1>
+    </section>
+
+    <section class="flex-container" style="margin-top: 30px;">
+      <div style="padding-right: 10px;">
+        <img src="./graphics/department_2_cropped_reduce.jpg" 
+             style="width:100%;" 
+             loading="lazy" 
+             alt="Department photo">
+      </div>
+      <div>
+        <div class="about-info" style="padding-bottom: 40px;">
+        <h2 style="text-align: left; padding-left: 20px;"> About</h2>
+        <p>
+          I'm a Ph.D. Candidate in 
+          <a href="https://amath.washington.edu/">Applied Mathematics</a> at the
+             University of Washington, 
+             advised by <a href="https://faculty.washington.edu/kutz/">Dr. J. Nathan Kutz</a>.
+             I work on creating reduced order models for characterizing plume dynamics,
+             as well as optimization methods for model discovery from sparse data
+             observations.
+        </p>
+
+        <p>
+          Outside of work I am an avid <a href="./climbing.html">rock climber</a>. I 
+          also enjoy solving rubiks cubes where I regularly compete in 
+          <a href="https://www.worldcubeassociation.org/persons/2024SALA23">competitions</a>
+          in the pacific north west. 
+        </p>
+      </div>
+
+      <div class="contact-info">
+          <h2 style="text-align: left; padding-left: 20px;">
+            Contact Info
+          </h2>
+        
+          <p>Email: <a id="email-link"></a></p>
+          <p>GitHub:
+            <a href="https://github.com/malachitewind" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              malachitewind
+            </a>
+          </p>   
+          <p>LinkedIn: 
+            <a href="https://linkedin.com/in/ike-griss-salas">ike-griss-salas</a>
+          </p>  
+          <p style="margin-top: 20px;">
+          <em>
+            Department of Applied Mathematics<br>
+            University of Washington<br>
+            Lewis Hall 222<br>
+            Seattle, WA 98195
+          </em>
           </p>
-          
-          <script>
-            // Sets the mailto link without exposing it in the HTML
-            (function () {
-              const user = "grisal";
-              const domain = "uw.edu";
-              const email = user + "@" + domain;
-              const el = document.getElementById("email-link");
-              el.href = "mailto:" + email;
-              el.textContent = email;
-            })();
-          </script>
-          
-          <p style="font-size:20px;">
-            GitHub: <a href="https://github.com/malachitewind" target="_blank" rel="noopener noreferrer">malachitewind</a>
-          </p>
-          
-        </td>
-      </tr>
-    </table>
-  </center>
-  
-	<center><table width="80%" border="0" cellspacing="1" cellpadding="1">
-	<tr>
-	<td align="left" bgcolor="white" style="width:500px;">
-	  <img src="./graphics/department_2_cropped_reduce.jpg" style="width: 100%;" loading="lazy" alt="Department photo">
-    </td>
-	<td align="left" bgcolor="white" valign="top">
-		<p style="padding-left:30px;">
+        </div>
+      </div>
+    </section>
+    
 
-    I'm a Ph.D. Candidate in <a href="https://amath.washington.edu/">Applied Mathematics</a> at the University of Washington, advised by <a href="https://faculty.washington.edu/kutz/">Nathan Kutz</a>. I work on creating reduced order models for characterizing plume dynamics. As well as optimization methods for model discovery from sparse data observations.
-		</p>
+  </main>
 
-    <p style="padding-left:30px; margin-top:50px;">
-        Department of Applied Mathematics
-        <br>
-        University of Washington
-        <br>
-        Lewis Hall 222
-        <br>
-        Seattle, WA 98195
-    </p>
-    </td>
-	</tr>
-   </table>
-  </center>
+  <script>
+    (function () {const user = "grisal";
+                  const domain = "uw.edu";
+                  const email = `${user}@${domain}`;
+                  const el = document.getElementById("email-link");
+                  el.href = `mailto:${email}`;
+                  el.textContent = email;})();
+  </script>
 
-
+</body>
+</html>

@@ -1,61 +1,55 @@
-<html style="background-color:#ffffff;">
+<!DOCTYPE html>
+<html>
 <head>
+  <meta charset="utf-8">
   <meta name="description" content="Climbing - Ike Griss Salas">
-  <title>Climbing - Ike Griss Salas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Climbing - Ike Griss Salas</title>
   <link rel="stylesheet" href="ike_styles.css" type="text/css" media="all">
 </head>
 
-<body style="margin-top: 0px;">
+<!-- increase max-width manually here -->
+<body style="max-width: 1500px;">
 
   <div id="outer">
-    <div id="menu">
+    <nav id="menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="./research.html">Research</a></li>
-        <li><a href="./climbing.html" class="active">Climbing</a></li>
+        <li><a href="index.html">home</a></li>
+        <li><a href="research.html">research</a></li>
+        <li><a href="climbing.html" class="active">climbing</a></li>
       </ul>
-    </div>
+    </nav>
+  </div>
 
-    <center>
-      <table width="80%" border="0" cellspacing="3" cellpadding="3">
-        <tr>
-          <td align="center" bgcolor="white">
-            <h1 style="font-size:50px; font-weight:normal;">Climbing</h1>
-            <p style="font-size:16px;">
-              Some climbs I have done on <em> 
-                <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas" target="_blank" rel="noopener noreferrer">
-                  Mountain Project.
-                </a>
-              </em>
-            </p>
-          </td>
-        </tr>
-      </table>
-    </center>
+  <main>
+    <section style="text-align: center; margin-top: 40px;">
+      <h1 style="font-size: 50px; font-weight: normal;">Climbing</h1>
+      <p style="font-size: 16px;">
+        Some climbs I have done on <em>
+          <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
+             target="_blank" rel="noopener noreferrer">
+             Mountain Project
+          </a>
+        </em>.
+      </p>
+    </section>
 
+    <section>
     <div class="gallery-container">
-      <h2 style="font-size:40px; font-weight:normal; margin-bottom:20px;">Gallery</h2>
-        <!-- <p style="font-size:16px; text-align:center;">
-          Some highlighted albums of my climbs.
-        </p> -->
-
-      <!-- Gallery Section -->
+      <h2 style="font-size: 30px;">Gallery</h2>
       <div class="album-grid">
-
         <!-- Vantage - Cooper and Julia -->
-         <figure class="album-item" onclick="toggleGallery('vantageCooperJulia')">
-          <img loading="lazy"  src="graphics/climbing/vant_coop_julia/ike.jpg" alt="vantage_cj">
-          <figcaption>I don't remember right now, Vantage. March 26, 2025</figcaption>
-         </figure>
+        <figure class="album-item" onclick="toggleGallery('vantageCooperJulia')">
+          <img loading="lazy" src="graphics/climbing/vant_coop_julia/ike.jpg" alt="vantage_cj">
+          <figcaption>Zig Zag, Mr. Nice Guy 5.10a. March 26, 2025</figcaption>
+        </figure>
 
         <!-- Vantage - Kate and Heidi -->
         <figure class="album-item" onclick="toggleGallery('vantageHeidiKate')">
           <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/group_sunshine.jpg" alt="vantage_hk">
           <figcaption>Entrance to Sunshine Wall, Vantage. March 24, 2025.</figcaption>
         </figure>
-        
+
         <!-- ShangriLa -->
         <figure class="album-item" onclick="toggleGallery('shangriLaGallery')">
           <img loading="lazy" src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La">
@@ -79,10 +73,8 @@
           <img loading="lazy" src="graphics/climbing/indian-creek/Indian-creek_sparkling_gefilte_fish.jpg" alt="Indian Creek">
           <figcaption>Indian Creek, Sparkling Gefilte Fish 5.10c, November 8, 2022.</figcaption>
         </figure>
-
       </div>
     </div>
-
     <!-- Hidden Galleries for Each Album -->
     <div class="hidden-gallery", id="vantageCooperJulia">
       <figure>
@@ -98,60 +90,90 @@
 
     <div class="hidden-gallery" id="shangriLaGallery">
       <figure>
-        <img loading="lazy" src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg" alt="Shangri-La Image 1">
+        <img loading="lazy" 
+             src="graphics/climbing/Shangri-La/Shangri-La_Crouching_Tiger.jpg"
+             alt="Shangri-La Image 1">
         <figcaption>Shangri-La, Second View. September 29, 2024.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/Shangri-La/damien.jpg" alt="Shangri-La Image 2">
+        <img loading="lazy" 
+             src="graphics/climbing/Shangri-La/damien.jpg" 
+             alt="Shangri-La Image 2">
         <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/Shangri-La/tree.jpg" alt="Shangri-La Image 2">
+        <img loading="lazy" 
+             src="graphics/climbing/Shangri-La/tree.jpg" 
+             alt="Shangri-La Image 2">
         <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/Shangri-La/julia.jpg" alt="Shangri-La Image 2">
+        <img loading="lazy" 
+             src="graphics/climbing/Shangri-La/julia.jpg" 
+             alt="Shangri-La Image 2">
         <figcaption>Shangri-La, Top Out. September 29, 2024.</figcaption>
       </figure>
     </div>
 
     <div class="hidden-gallery" id="vantageHeidiKate">
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/group_sunshine.jpg" alt="sunshine">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/group_sunshine.jpg"
+             alt="sunshine">
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/kate_belay_ike.jpg" alt="kate_belay_ike">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/kate_belay_ike.jpg" 
+             alt="kate_belay_ike">
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/kate_belay_heidi.jpg" alt="kate_belay_heidi">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/kate_belay_heidi.jpg" 
+             alt="kate_belay_heidi">
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/group_pitch1.jpg" alt="group_pitch1">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/group_pitch1.jpg" 
+             alt="group_pitch1">
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/beloggles.jpg" alt="beloggles">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/beloggles.jpg" 
+             alt="beloggles">
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/kate_heidi.jpg" alt="kate_heidi">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/kate_heidi.jpg" 
+             alt="kate_heidi">
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/good_doggo.jpg" alt="good_doggo">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/good_doggo.jpg" 
+             alt="good_doggo">
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/vantage_heidi_kate/kate_belay.jpg" alt="kate_belay">
+        <img loading="lazy" 
+             src="graphics/climbing/vantage_heidi_kate/kate_belay.jpg" 
+             alt="kate_belay">
       </figure>
     </div>
     <div class="hidden-gallery" id="billsWallGallery">
       <figure>
-        <img loading="lazy" src="graphics/climbing/sunshine/Bills-Wall_Kissing_Cousins.jpg" alt="Bill's Wall Image 1">
+        <img loading="lazy" 
+             src="graphics/climbing/sunshine/Bills-Wall_Kissing_Cousins.jpg" 
+             alt="Bill's Wall Image 1">
         <figcaption>Bill's Wall, Second View. October 26, 2024.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/sunshine/cooper_julia.jpg" alt="Bill's Wall Image 3">
+        <img loading="lazy" 
+             src="graphics/climbing/sunshine/cooper_julia.jpg" 
+             alt="Bill's Wall Image 3">
         <figcaption>Bill's Wall, Top Out. October 26, 2022024.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/sunshine/selfie.jpg" alt="Bill's Wall Image 4">
+        <img loading="lazy" 
+             src="graphics/climbing/sunshine/selfie.jpg" 
+             alt="Bill's Wall Image 4">
         <figcaption>Bill's Wall, Top Out. October 26, 2022024.</figcaption>
       </figure>
     </div>
@@ -185,17 +207,21 @@
 
     <div class="hidden-gallery" id="indianCreekGallery">
       <figure>
-        <img loading="lazy" src="graphics/climbing/indian-creek/Indian-creek_sparkling_gefilte_fish.jpg" alt="Indian Creek Image 1">
+        <img loading="lazy" 
+             src="graphics/climbing/indian-creek/Indian-creek_sparkling_gefilte_fish.jpg" 
+             alt="Indian Creek Image 1">
         <figcaption>Indian Creek, Sparkling Gefilte Fish 5.10c. November 8, 2022.</figcaption>
       </figure>
       <figure>
-        <img loading="lazy" src="graphics/climbing/indian-creek/lunar_ecplise.jpg" alt="Indian Creek Image 2">
+        <img loading="lazy" 
+             src="graphics/climbing/indian-creek/lunar_ecplise.jpg" 
+             alt="Indian Creek Image 2">
         <figcaption>Indian Creek, Lunar Eclipse, November 8, 2022.</figcaption>
       </figure>
     </div>
+    </section>
 
-    <!-- Additional galleries can be added below -->
-  </div>
+  </main>
 
   <script>
     // Function to toggle visibility of the gallery
@@ -208,5 +234,6 @@
       }
     }
   </script>
+
 </body>
 </html>

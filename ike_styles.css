@@ -1,200 +1,179 @@
+/* General reset */
 * {
-}
-
-html {
-	background-color: black;	
-	zoom: 75%;
-}
-
-body {
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-color: #ffffff;
+    zoom: 75%; 
+    /* consider transform: scale(0.75) if cross-browser matters */
+  }
+  
+  body {
     margin: auto;
     padding: 10px;
-    margin-top: 0cm;
-}
-
-h1,h2,h3,h4,h5 {
+    margin-top: 0;
+    max-width: 1200px;
+  }
+  
+  h1, h2, h3, h4, h5 {
     text-align: center;
     font-family: 'Times New Roman', serif;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  p {
     font-family: 'Times New Roman', serif;
     font-size: 0.6cm;
     width: 95%;
-}
-
-
-img {
+  }
+  
+  img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-table {
+  }
+  
+  table {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.8cm;
     font-family: sans-serif;
     min-width: 400px;
-	text-align: center;
-	border-radius: 10px;
-}
-
-thead tr {
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  thead tr {
     background-color: #009879;
     color: #ffffff;
     text-align: left;
-}
-
-th {
+  }
+  
+  th, td {
     padding: 12px 15px;
-/*    border: 3px solid black;*/ /*FOR DEBUGGING TABLES */
-}
-td {
-    padding: 12px 0px;
-/*    border: 3px solid black;*/ /*FOR DEBUGGING TABLES */
-}
-
-tbody tr {
-}
-
-#outer {
-  z-index: 2;
-  position: relative;
-  width: 82%;
-  border: solid 7px #fff;
-  background-color: #fff;
-  margin: 0 auto;
-}
-
-
+  }
+  
+  #outer {
+    z-index: 2;
+    position: relative;
+    width: 82%;
+    border: solid 7px #fff;
+    background-color: #fff;
+    margin: 0 auto;
+    /* height: 3.5em;  */
+  }
+  
 #menu {
     width: fit-content;
     margin: 0 auto;
-    height: 3.5em;
+    height: 3.5em; 
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
 #menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1.5em; 
-  }
-  
+    gap: 0.5em; /* Increase the gap between menu items */
+}
 
-#menu ul li
-{
+#menu ul li {
     display: inline;
 }
 
-#menu ul li a
-{
-padding: 0.5em 1.0em 0.9em 1.0em;
-color: #000;
-text-decoration: none;
+#menu ul li a {
+    padding: 0.6em 1.5em; /* Increase the padding to make menu items larger */
+    font-size: 1.2em; /* Increase font size */
+    color: #000;
+    text-decoration: none;
 }
 
-#menu ul li a:hover
-{
-background: #ddd repeat-x top left;
-text-decoration: underline;
+#menu ul li a:hover {
+    background: #ddd repeat-x top left;
+    text-decoration: underline;
+    border-radius: 10px;
 }
 
-#menu ul li a.active
-{
-background: #aaa repeat-x top left;
-border-radius: 3px;
+#menu ul li a.active {
+    background: #aaa repeat-x top left;
+    border-radius: 10px;
 }
 
-.code {
+  .code {
     font-family: monospace;
-}
-
-
-.pub-idx {
-    width: 10%;
-    width: calc(2em);
+  }
+  
+  .pub-idx {
+    width: 2em;
     display: inline-block;
     vertical-align: top;
-}
-
-.pub-container {
-    width: 90%;
-    width: calc(100% - 2em);
-    display: inline-block;
-}
-
-.paper > div {
-    padding: 0;
-}
-
-.title,.authors,.journal,.year,.eprint,.pdf,.doi,.url,.links,.intro,.notes {
-    display: inline;
-}
-
-.links {
-    white-space: nowrap;
-}
-
-.title{
-    font-weight: bold;
-}
-
-.journal{
-    font-style: italic;
-}
-
-.authors {
-}
-
-.bibtex {
-    display: none;
-}
-
-.paper:focus .bibtex {
-    display: inherit;
-}
-
-.footer {
-    padding-top: 4em;
-    font-size: 80%;
-}
-
-#refs {
-    margin-top: 1em;
-}
-
-#refs p {
-    margin: 0pt;
-}
-
-
-/* Container for the gallery section */
-.gallery-container {
-    max-width: 1600px;
-    margin: auto;
-    padding: 0px;
   }
   
-  /* Flexbox wrapper to layout album covers */
+  .pub-container {
+    width: calc(100% - 2em);
+    display: inline-block;
+  }
+  
+  .paper > div {
+    padding: 0;
+  }
+  
+  .title, .authors, .journal, .year, .eprint, .pdf, .doi, .url, .links, .intro, .notes {
+    display: inline;
+  }
+  
+  .title {
+    font-weight: bold;
+  }
+  
+  .journal {
+    font-style: italic;
+  }
+  
+  .bibtex {
+    display: none;
+  }
+  
+  .paper:focus .bibtex {
+    display: inherit;
+  }
+  
+  .footer {
+    padding-top: 4em;
+    font-size: 80%;
+  }
+  
+  #refs {
+    margin-top: 1em;
+  }
+  
+  #refs p {
+    margin: 0;
+  }
+  
+  /* Gallery section for climbing page */
+  .gallery-container {
+    max-width: 1600px;
+    margin: auto;
+    padding: 0;
+  }
+  
   .album-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0px;
+    gap: 0;
   }
   
-  /* Individual album cover item */
   .album-item {
     flex: 1 1 250px;
-    max-width: 400px;
+    max-width: 300px;
     text-align: center;
     cursor: pointer;
   }
@@ -208,7 +187,7 @@ border-radius: 3px;
   }
   
   .album-item img:hover {
-    opacity: 0.8;
+    opacity: 0.5;
   }
   
   .album-item figcaption {
@@ -217,27 +196,75 @@ border-radius: 3px;
     color: #555;
   }
   
-
-.hidden-gallery {
+  .hidden-gallery {
     display: none;
     margin: 20px auto;
     max-width: 1200px;
-    /* display: flex; */
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-}
-.hidden-gallery figure {
-    flex: 1 1 250px;
+  }
+  
+  .hidden-gallery figure {
+    flex: 1 1 300px;
     max-width: 400px;
     margin: 10px;
     text-align: center;
   }
   
-
-.hidden-gallery img {
+  .hidden-gallery img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  /* Flexbox container to wrap items for homepage */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;  /* Allow wrapping of items */
+  gap: 20px;        /* Space between the items */
 }
+
+/* For image and text blocks */
+.flex-container > div {
+  flex: 1 1 250px;  /* Allow items to grow and shrink but have a minimum width of 300px */
+  max-width: 45%;    /* Limit the width of the image and text block */
+  box-sizing: border-box; /* To ensure padding doesn't exceed max-width */
+}
+
+/* Optional: Center items nicely on small screens */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;  /* Stack items vertically */
+    align-items: center;     /* Center the items */
+  }
+  
+  .flex-container > div {
+    max-width: 100%;          /* Make sure the items take full width on smaller screens */
+    text-align: center;      /* Center the text when stacked */
+  }
+
+  .flex-container img {
+    max-width: 70%;  /* Optional: Adjust max image width on smaller screens */
+  }
+}
+
+.contact-info p {
+  margin-top: 10px;     /* Small top margin */
+  margin-bottom: 10px;  /* Small bottom margin */
+  padding-left: 20px;  /* Keep your left padding */
+  font-size: 20px;
+  text-align: left;
+}
+
+.about-info p {
+  margin-top: 10px;     /* Small top margin */
+  margin-bottom: 20px;  /* Small bottom margin */
+  padding-left: 20px;  /* Keep your left padding */
+  font-size: 25px;
+  text-align: left;
+}
+
