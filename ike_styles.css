@@ -21,6 +21,7 @@
     font-family: 'Times New Roman', serif;
     padding-bottom: 0;
     margin-bottom: 0;
+    margin-top: 0;
   }
   
   p {
@@ -62,12 +63,13 @@
     border: solid 7px #fff;
     background-color: #fff;
     margin: 0 auto;
+    /* height: 3.5em;  */
   }
   
-  #menu {
+#menu {
     width: fit-content;
     margin: 0 auto;
-    height: 3.5em; /* Increase height for the navbar */
+    height: 3.5em; 
     display: flex;
     justify-content: center;
     align-items: center;
