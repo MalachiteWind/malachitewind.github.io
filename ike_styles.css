@@ -1,77 +1,69 @@
+/* General reset */
 * {
-}
-
-html {
-	background-color: black;	
-	zoom: 75%;
-}
-
-body {
+    box-sizing: border-box;
+  }
+  
+  html {
+    background-color: #ffffff;
+    zoom: 75%; 
+    /* consider transform: scale(0.75) if cross-browser matters */
+  }
+  
+  body {
     margin: auto;
     padding: 10px;
-    margin-top: 0cm;
-}
-
-h1,h2,h3,h4,h5 {
+    margin-top: 0;
+  }
+  
+  h1, h2, h3, h4, h5 {
     text-align: center;
     font-family: 'Times New Roman', serif;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  p {
     font-family: 'Times New Roman', serif;
     font-size: 0.6cm;
     width: 95%;
-}
-
-
-img {
+  }
+  
+  img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-table {
+  }
+  
+  table {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.8cm;
     font-family: sans-serif;
     min-width: 400px;
-	text-align: center;
-	border-radius: 10px;
-}
-
-thead tr {
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  thead tr {
     background-color: #009879;
     color: #ffffff;
     text-align: left;
-}
-
-th {
+  }
+  
+  th, td {
     padding: 12px 15px;
-/*    border: 3px solid black;*/ /*FOR DEBUGGING TABLES */
-}
-td {
-    padding: 12px 0px;
-/*    border: 3px solid black;*/ /*FOR DEBUGGING TABLES */
-}
-
-tbody tr {
-}
-
-#outer {
-  z-index: 2;
-  position: relative;
-  width: 82%;
-  border: solid 7px #fff;
-  background-color: #fff;
-  margin: 0 auto;
-}
-
-
-#menu {
+  }
+  
+  #outer {
+    z-index: 2;
+    position: relative;
+    width: 82%;
+    border: solid 7px #fff;
+    background-color: #fff;
+    margin: 0 auto;
+  }
+  
+  #menu {
     width: fit-content;
     margin: 0 auto;
     height: 3.5em;
@@ -79,119 +71,101 @@ tbody tr {
     justify-content: center;
     align-items: center;
   }
-
-#menu ul {
+  
+  #menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1.5em; 
+    gap: 1.5em;
   }
   
-
-#menu ul li
-{
+  #menu ul li {
     display: inline;
-}
-
-#menu ul li a
-{
-padding: 0.5em 1.0em 0.9em 1.0em;
-color: #000;
-text-decoration: none;
-}
-
-#menu ul li a:hover
-{
-background: #ddd repeat-x top left;
-text-decoration: underline;
-}
-
-#menu ul li a.active
-{
-background: #aaa repeat-x top left;
-border-radius: 3px;
-}
-
-.code {
+  }
+  
+  #menu ul li a {
+    padding: 0.5em 1.0em 0.9em 1.0em;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  #menu ul li a:hover {
+    background: #ddd repeat-x top left;
+    text-decoration: underline;
+  }
+  
+  #menu ul li a.active {
+    background: #aaa repeat-x top left;
+    border-radius: 3px;
+  }
+  
+  .code {
     font-family: monospace;
-}
-
-
-.pub-idx {
-    width: 10%;
-    width: calc(2em);
+  }
+  
+  .pub-idx {
+    width: 2em;
     display: inline-block;
     vertical-align: top;
-}
-
-.pub-container {
-    width: 90%;
-    width: calc(100% - 2em);
-    display: inline-block;
-}
-
-.paper > div {
-    padding: 0;
-}
-
-.title,.authors,.journal,.year,.eprint,.pdf,.doi,.url,.links,.intro,.notes {
-    display: inline;
-}
-
-.links {
-    white-space: nowrap;
-}
-
-.title{
-    font-weight: bold;
-}
-
-.journal{
-    font-style: italic;
-}
-
-.authors {
-}
-
-.bibtex {
-    display: none;
-}
-
-.paper:focus .bibtex {
-    display: inherit;
-}
-
-.footer {
-    padding-top: 4em;
-    font-size: 80%;
-}
-
-#refs {
-    margin-top: 1em;
-}
-
-#refs p {
-    margin: 0pt;
-}
-
-
-/* Container for the gallery section */
-.gallery-container {
-    max-width: 1600px;
-    margin: auto;
-    padding: 0px;
   }
   
-  /* Flexbox wrapper to layout album covers */
+  .pub-container {
+    width: calc(100% - 2em);
+    display: inline-block;
+  }
+  
+  .paper > div {
+    padding: 0;
+  }
+  
+  .title, .authors, .journal, .year, .eprint, .pdf, .doi, .url, .links, .intro, .notes {
+    display: inline;
+  }
+  
+  .title {
+    font-weight: bold;
+  }
+  
+  .journal {
+    font-style: italic;
+  }
+  
+  .bibtex {
+    display: none;
+  }
+  
+  .paper:focus .bibtex {
+    display: inherit;
+  }
+  
+  .footer {
+    padding-top: 4em;
+    font-size: 80%;
+  }
+  
+  #refs {
+    margin-top: 1em;
+  }
+  
+  #refs p {
+    margin: 0;
+  }
+  
+  /* Gallery section */
+  .gallery-container {
+    max-width: 1600px;
+    margin: auto;
+    padding: 0;
+  }
+  
   .album-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0px;
+    gap: 0;
   }
   
-  /* Individual album cover item */
   .album-item {
     flex: 1 1 250px;
     max-width: 400px;
@@ -217,27 +191,26 @@ border-radius: 3px;
     color: #555;
   }
   
-
-.hidden-gallery {
+  .hidden-gallery {
     display: none;
     margin: 20px auto;
     max-width: 1200px;
-    /* display: flex; */
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-}
-.hidden-gallery figure {
+  }
+  
+  .hidden-gallery figure {
     flex: 1 1 250px;
     max-width: 400px;
     margin: 10px;
     text-align: center;
   }
   
-
-.hidden-gallery img {
+  .hidden-gallery img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+  }
+  
