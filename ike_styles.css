@@ -66,40 +66,42 @@
   #menu {
     width: fit-content;
     margin: 0 auto;
-    height: 3.5em;
+    height: 3.5em; /* Increase height for the navbar */
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  #menu ul {
+}
+
+#menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1.5em;
-  }
-  
-  #menu ul li {
+    gap: 0.5em; /* Increase the gap between menu items */
+}
+
+#menu ul li {
     display: inline;
-  }
-  
-  #menu ul li a {
-    padding: 0.5em 1.0em 0.9em 1.0em;
+}
+
+#menu ul li a {
+    padding: 0.6em 1.5em; /* Increase the padding to make menu items larger */
+    font-size: 1.2em; /* Increase font size */
     color: #000;
     text-decoration: none;
-  }
-  
-  #menu ul li a:hover {
+}
+
+#menu ul li a:hover {
     background: #ddd repeat-x top left;
     text-decoration: underline;
-  }
-  
-  #menu ul li a.active {
+    border-radius: 10px;
+}
+
+#menu ul li a.active {
     background: #aaa repeat-x top left;
-    border-radius: 3px;
-  }
-  
+    border-radius: 10px;
+}
+
   .code {
     font-family: monospace;
   }
