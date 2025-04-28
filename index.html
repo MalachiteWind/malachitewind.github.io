@@ -20,60 +20,76 @@
   </div>
 
   <main>
-    <section style="text-align: center; margin-top: 40px;">
+    <section style="text-align: center; margin-top: 40px; margin-bottom: 50px;">
       <h1 style="font-size: 50px; font-weight: normal;">Ike Griss Salas</h1>
-
-      <p style="font-size: 20px; margin-bottom: 10px;">
-        Email: <a id="email-link"></a>
-      </p>
-
-      <p style="font-size: 20px;">
-        GitHub:
-        <a href="https://github.com/malachitewind" 
-           target="_blank" 
-           rel="noopener noreferrer">
-          malachitewind
-        </a>
-      </p>
     </section>
 
-    <section style="display: flex; justify-content: center; margin-top: 30px;">
-      <div style="width: 40%; padding-right: 20px;">
+    <section class="flex-container" style="margin-top: 30px;">
+      <div style="padding-right: 10px;">
         <img src="./graphics/department_2_cropped_reduce.jpg" 
              style="width:100%;" 
              loading="lazy" 
              alt="Department photo">
       </div>
-      <div style="width: 50%; text-align: left;">
-        <p style="padding-left:30px;">
+      <div>
+        <div class="about-info" style="padding-bottom: 40px;">
+        <h3 style="text-align: left; padding-left: 20px;"> About</h3>
+        <p>
           I'm a Ph.D. Candidate in 
           <a href="https://amath.washington.edu/">Applied Mathematics</a> at the
              University of Washington, 
-             advised by <a href="https://faculty.washington.edu/kutz/">Nathan Kutz</a>.
+             advised by <a href="https://faculty.washington.edu/kutz/">Dr. J. Nathan Kutz</a>.
              I work on creating reduced order models for characterizing plume dynamics,
              as well as optimization methods for model discovery from sparse data
              observations.
         </p>
 
-        <p style="padding-left:30px; margin-top:50px;">
-          Department of Applied Mathematics<br>
-          University of Washington<br>
-          Lewis Hall 222<br>
-          Seattle, WA 98195
+        <p>
+          Outside of work I am an avid <a href="./climbing.html">rock climber</a>. I 
+          also enjoy solving rubiks cubes where I regularly compete in 
+          <a href="https://www.worldcubeassociation.org/persons/2024SALA23">competitions</a>
+          in the pacific north west. 
         </p>
       </div>
+
+      <div class="contact-info">
+          <h3 style="text-align: left; padding-left: 20px;">
+            Contact Info
+          </h3>
+        
+          <p>Email: <a id="email-link"></a></p>
+          <p>GitHub:
+            <a href="https://github.com/malachitewind" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              malachitewind
+            </a>
+          </p>   
+          <p>LinkedIn: 
+            <a href="https://linkedin.com/in/ike-griss-salas">ike-griss-salas</a>
+          </p>  
+          <p style="margin-top: 20px;">
+          <em>
+            Department of Applied Mathematics<br>
+            University of Washington<br>
+            Lewis Hall 222<br>
+            Seattle, WA 98195
+          </em>
+          </p>
+        </div>
+      </div>
     </section>
+    
+
   </main>
 
   <script>
-    (function () {
-      const user = "grisal";
-      const domain = "uw.edu";
-      const email = `${user}@${domain}`;
-      const el = document.getElementById("email-link");
-      el.href = `mailto:${email}`;
-      el.textContent = email;
-    })();
+    (function () {const user = "grisal";
+                  const domain = "uw.edu";
+                  const email = `${user}@${domain}`;
+                  const el = document.getElementById("email-link");
+                  el.href = `mailto:${email}`;
+                  el.textContent = email;})();
   </script>
 
 </body>
