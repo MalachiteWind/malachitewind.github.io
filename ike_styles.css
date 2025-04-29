@@ -92,6 +92,9 @@
     font-size: 1.2em; /* Increase font size */
     color: #000;
     text-decoration: none;
+    display: inline-block;  /* Ensure it respects width */
+    width: 120px;           /* Set all buttons to same width */
+    text-align: center;
 }
 
 #menu ul li a:hover {
@@ -248,7 +251,7 @@
   }
 
   .flex-container img {
-    max-width: 70%;  /* Optional: Adjust max image width on smaller screens */
+    max-width: 90%;  /* Optional: Adjust max image width on smaller screens */
   }
 }
 
