@@ -251,8 +251,8 @@
   /* Media query for small screens (phones) */
   @media (max-width: 768px) {
     .hidden-gallery {
-        width: 100vw; /* Full width on smaller screens */
-        height: 100vh; /* Full height on smaller screens */
+        width: calc(100vw/0.75); /* Full width on smaller screens */
+        height: calc(100vh/0.75); /* Full height on smaller screens */
         padding: 10px; /* Further reduce padding on smaller screens */
     }
   
