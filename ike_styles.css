@@ -253,17 +253,17 @@
     .hidden-gallery {
         width: calc(100vw/0.75); /* Full width on smaller screens */
         height: calc(100vh/0.75); /* Full height on smaller screens */
-        padding: 10px; /* Further reduce padding on smaller screens */
+        padding: 5px; /* Further reduce padding on smaller screens */
     }
   
     .hidden-gallery figure {
-        flex: 1 1 70%; /* Make figures take full width */
-        max-width: 70%; /* Remove the max-width */
+        flex: 1 1 100%; /* Make figures take full width */
+        max-width: 100%; /* Remove the max-width */
         margin: 5px; /* Adjust margins for smaller screens */
     }
   
     .hidden-gallery img {
-        width: 100%; /* Ensure images take full width */
+        width: 70%; /* Ensure images take full width */
         height: auto; /* Keep aspect ratio */
         box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Lighter shadow on mobile */
     }
