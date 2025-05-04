@@ -257,8 +257,8 @@
     }
   
     .hidden-gallery figure {
-        flex: 1 1 100%; /* Make figures take full width */
-        max-width: 100%; /* Remove the max-width */
+        flex: 1 1 70%; /* Make figures take full width */
+        max-width: 70%; /* Remove the max-width */
         margin: 5px; /* Adjust margins for smaller screens */
     }
   
