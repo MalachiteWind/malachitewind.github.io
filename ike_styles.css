@@ -201,16 +201,24 @@
   
   .hidden-gallery {
     display: none;
-    margin: 20px auto;
-    max-width: 1200px;
-    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw / 0.75);
+    height: calc(100vh / 0.75);
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.85); /* translucent dark background */
+    z-index: 9999;
+    padding: 40px;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
   }
   
   .hidden-gallery figure {
-    flex: 1 1 300px;
-    max-width: 400px;
+    flex: 1 1 400px;
+    max-width: 500px;
     margin: 10px;
     text-align: center;
   }
@@ -219,7 +227,25 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  .hidden-gallery figcaption {
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 16px;
+  }
+  
+  /* Optional: Close button styling */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
   }
   
 

@@ -224,16 +224,32 @@
   </main>
 
   <script>
-    // Function to toggle visibility of the gallery
     function toggleGallery(galleryId) {
+      // Hide all galleries first
+      document.querySelectorAll('.hidden-gallery').forEach(gallery => {
+        gallery.style.display = 'none';
+      });
+  
       const gallery = document.getElementById(galleryId);
-      if (gallery.style.display === "none" || gallery.style.display === "") {
-        gallery.style.display = "flex"; // Show gallery
-      } else {
-        gallery.style.display = "none"; // Hide gallery
+  
+      // If already open, close it
+      if (gallery.style.display === 'flex') {
+        gallery.style.display = 'none';
+        return;
       }
+      // Add close button if not present
+      if (!gallery.querySelector('.close-btn')) {
+        const closeBtn = document.createElement('div');
+        closeBtn.className = 'close-btn';
+        closeBtn.innerHTML = '&times;';
+        closeBtn.onclick = () => gallery.style.display = 'none';
+        gallery.appendChild(closeBtn);
+      }
+  
+      gallery.style.display = 'flex';
     }
   </script>
+  
 
 </body>
 </html>
