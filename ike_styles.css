@@ -5,7 +5,7 @@
   
   html {
     background-color: #ffffff;
-    zoom: 75%; 
+    /* zoom: 75%;  */
     /* consider transform: scale(0.75) if cross-browser matters */
   }
   
@@ -13,7 +13,7 @@
     margin: auto;
     padding: 10px;
     margin-top: 0;
-    max-width: 1200px;
+    max-width: 1000px;
   }
   
   h1, h2, h3, h4, h5 {
@@ -26,8 +26,8 @@
   
   p {
     font-family: 'Times New Roman', serif;
-    font-size: 0.6cm;
-    width: 95%;
+    font-size: 0.45cm;
+    width: 100%;
   }
   
   img {
@@ -69,7 +69,7 @@
 #menu {
     width: fit-content;
     margin: 0 auto;
-    height: 3.5em; 
+    height: 2.5em; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,23 +89,23 @@
 
 #menu ul li a {
     padding: 0.6em 1.5em; /* Increase the padding to make menu items larger */
-    font-size: 1.2em; /* Increase font size */
+    font-size: 0.9em; /* Increase font size */
     color: #000;
     text-decoration: none;
     display: inline-block;  /* Ensure it respects width */
-    width: 120px;           /* Set all buttons to same width */
+    width: 90px;           /* Set all buttons to same width */
     text-align: center;
 }
 
 #menu ul li a:hover {
     background: #ddd repeat-x top left;
     text-decoration: underline;
-    border-radius: 10px;
+    border-radius: 7.5px;
 }
 
 #menu ul li a.active {
     background: #aaa repeat-x top left;
-    border-radius: 10px;
+    border-radius: 7.5px;
 }
 
   .code {
@@ -162,7 +162,7 @@
   
   /* Gallery section for climbing page */
   .gallery-container {
-    max-width: 1600px;
+    max-width: 1000px;
     margin: auto;
     padding: 0;
   }
@@ -171,22 +171,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0;
+    gap: 40px;
+    /* padding-left: 20px; */
   }
   
   .album-item {
-    flex: 1 1 250px;
-    max-width: 300px;
+    flex: 1 1 225px;
+    max-width: 250px;
     text-align: center;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
+    /* padding-left: 20px;
+    padding-right: 20px; */
   }
   
   .album-item img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.2s;
+    box-shadow: 8px 10px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.1s;
   }
   
   .album-item img:hover {
@@ -194,8 +199,8 @@
   }
   
   .album-item figcaption {
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: 12px;
+    font-size: 12px;
     color: #555;
   }
   
@@ -204,8 +209,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100vw / 0.75);
-    height: calc(100vh / 0.75);
+    width: 100vw ;
+    height: 100vh ;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.85); /* translucent dark background */
     z-index: 9999;
@@ -251,8 +256,8 @@
   /* Media query for small screens (phones) */
   @media (max-width: 768px) {
     .hidden-gallery {
-        width: calc(100vw/0.75); /* Full width on smaller screens */
-        height: calc(100vh/0.75); /* Full height on smaller screens */
+        width: 100vw; /* Full width on smaller screens */
+        height: 100vh; /* Full height on smaller screens */
     }
   
     .hidden-gallery figure {
@@ -304,16 +309,16 @@
 .contact-info p {
   margin-top: 10px;     /* Small top margin */
   margin-bottom: 10px;  /* Small bottom margin */
-  padding-left: 20px;  /* Keep your left padding */
-  font-size: 20px;
+  padding-left: 10px;  /* Keep your left padding */
+  font-size: 15px;
   text-align: left;
 }
 
 .about-info p {
   margin-top: 10px;     /* Small top margin */
   margin-bottom: 20px;  /* Small bottom margin */
-  padding-left: 20px;  /* Keep your left padding */
-  font-size: 25px;
+  padding-left: 10px;  /* Keep your left padding */
+  font-size: 20px;
   text-align: left;
 }
 
