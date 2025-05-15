@@ -55,24 +55,39 @@
   th, td {
     padding: 12px 15px;
   }
-  
+  /* 15a6da */
+a {
+  color: #18ade3;  /* Set your desired color */
+  text-decoration: none;  /* Optional: remove underline */
+}
+
+
+a:hover {
+  color: #394dff;  /* On hover */
+  text-decoration: underline;  /* Optional: add underline on hover */
+}
+
+
   #outer {
     z-index: 2;
     position: relative;
-    width: 82%;
-    border: solid 7px #fff;
-    background-color: #fff;
+    width: 100%;
+    border: solid 1px #ffffff;
+    background-color: #ffffff;
     margin: 0 auto;
     /* height: 3.5em;  */
+    margin-bottom:0px;
+    margin-top: 0px;
   }
   
 #menu {
     width: fit-content;
     margin: 0 auto;
-    height: 2.5em; 
+    height: 1.5em; 
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2px;
 }
 
 #menu ul {
@@ -80,7 +95,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 0.5em; /* Increase the gap between menu items */
+    /* gap: 0.1em; Increase the gap between menu items */
 }
 
 #menu ul li {
@@ -88,24 +103,28 @@
 }
 
 #menu ul li a {
-    padding: 0.6em 1.5em; /* Increase the padding to make menu items larger */
-    font-size: 0.9em; /* Increase font size */
+    padding: 0.6em 0em; /* Increase the padding to make menu items larger */
+    font-size: 18px; /* Increase font size */
+    font-family: 'Times New Roman', serif;
     color: #000;
     text-decoration: none;
     display: inline-block;  /* Ensure it respects width */
-    width: 90px;           /* Set all buttons to same width */
+    width: 80px;           /* Set all buttons to same width */
     text-align: center;
 }
 
 #menu ul li a:hover {
-    background: #ddd repeat-x top left;
-    text-decoration: underline;
+    background: #91ddf800 repeat-x top left;
+    /* text-decoration: underline; */
     border-radius: 7.5px;
+    color: #4ccfff;
 }
-
+/* #aaaaaa */
 #menu ul li a.active {
-    background: #aaa repeat-x top left;
+    background: #7ca8ff00 repeat-x top left;
+    color: #4ccfff;
     border-radius: 7.5px;
+    font-weight: bold;
 }
 
   .code {
@@ -285,7 +304,7 @@
 /* For image and text blocks */
 .flex-container > div {
   flex: 1 1 250px;  /* Allow items to grow and shrink but have a minimum width of 300px */
-  max-width: 45%;    /* Limit the width of the image and text block */
+  max-width: 450px;    /* Limit the width of the image and text block */
   box-sizing: border-box; /* To ensure padding doesn't exceed max-width */
 }
 
