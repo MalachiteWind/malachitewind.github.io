@@ -341,3 +341,89 @@ a:hover {
   text-align: left;
 }
 
+/* =========================================
+   Climbing Tick List Styles (Compact Version)
+   ========================================= */
+
+.mp-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  width: auto;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.mp-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* 1. CONTROLS TEXT SIZE */
+  font-size: 0.8rem;         /* <--- Smaller font (was 0.95rem) */
+  color: #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header Styling */
+.mp-table thead tr {
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.mp-table th {
+  /* 2. CONTROLS HEADER HEIGHT */
+  padding: 8px 12px;         /* <--- Reduced top/bottom padding (was 12px) */
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mp-table td {
+  /* 3. CONTROLS ROW HEIGHT */
+  padding: 6px 12px;         /* <--- Reduced top/bottom padding to 6px (was 12px) */
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Row Hover Effect */
+.mp-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  transition: background-color 0.2s;
+}
+
+.mp-table tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+.mp-table tbody tr:last-of-type {
+  border-bottom: 2px solid #2c3e50;
+}
+
+/* Link Styling */
+.mp-route-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mp-route-link:hover {
+  color: #009879;
+  text-decoration: underline;
+}
+
+/* Grade Column Styling */
+.mp-grade {
+  font-family: "Courier New", Courier, monospace;
+  color: #555;
+  background: #eaeaea;
+  padding: 1px 5px;          /* <--- Made the gray box around grade smaller */
+  border-radius: 3px;
+  font-size: 0.9em;          /* Relative to the main table font */
+  font-weight: bold;
+}
+
+/* Date Column Styling */
+.mp-date {
+  color: #888;
+  white-space: nowrap;
+}

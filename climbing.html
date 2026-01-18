@@ -25,19 +25,39 @@
   <main>
     <section style="text-align: center; margin-top: 25px;">
       <h1 style="font-size: 38px; font-weight: normal;">Climbing</h1>
-      <p style="font-size: 12px;">
+  <div class="mp-container">
+    <h3>Some of my recent climbs on  <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
+             target="_blank" rel="noopener noreferrer">
+             Mountain Project
+          </a></h3>
+    <table class="mp-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Route</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody id="mp-ticks-body">
+        <tr>
+          <td colspan="3">Loading climbs...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+      <!-- <p style="font-size: 12px;">
         Some climbs I have done on <em>
           <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
              target="_blank" rel="noopener noreferrer">
              Mountain Project
           </a>
         </em>.
-      </p>
+      </p> -->
     </section>
 
     <section>
     <div class="gallery-container">
-      <h2 style="font-size: 22px; padding-bottom: 20px;">Gallery</h2>
+      <h2 style="font-size: 22px; padding-bottom: 20px;">Photo Gallery. Click on an album!</h2>
       <div class="album-grid">
         <!-- Vantage - Cooper and Julia -->
         <figure class="album-item" onclick="toggleGallery('vantageCooperJulia')">
@@ -249,6 +269,64 @@
   
       gallery.style.display = 'flex';
     }
+  </script>
+
+  <script>
+    const mpFeedUrl = "https://www.mountainproject.com/rss/user-ticks/201838571";
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mpFeedUrl)}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('mp-ticks-body');
+        tbody.innerHTML = ""; // Clear "Loading..."
+
+        data.items.forEach(item => {
+          // --- 1. Clean the Title ---
+          // Remove "Tick: " from the start
+          let cleanTitle = item.title.replace(/^Tick:\s*/, '');
+
+          // --- 2. Extract the Grade ---
+          // Look for the last set of parentheses, e.g., "(5.10a)"
+          let grade = "";
+          const gradeMatch = cleanTitle.match(/\((.*?)\)$/);
+          
+          if (gradeMatch) {
+            grade = gradeMatch[1]; // Get the text inside parens
+            // Remove the grade from the title so it doesn't show twice
+            cleanTitle = cleanTitle.replace(gradeMatch[0], '').trim();
+          }
+
+          // --- 3. Format the Date ---
+          // Convert "2025-09-27 22:45:23" to "Sep 27, 2025"
+          const dateObj = new Date(item.pubDate);
+          const dateStr = dateObj.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
+
+          // --- 4. Build the Table Row ---
+          const tr = document.createElement('tr');
+          
+          tr.innerHTML = `
+            <td class="mp-date">${dateStr}</td>
+            <td>
+              <a href="${item.link}" target="_blank" class="mp-route-link">
+                ${cleanTitle}
+              </a>
+            </td>
+            <td><span class="mp-grade">${grade}</span></td>
+          `;
+
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching ticks:', error);
+        document.getElementById('mp-ticks-body').innerHTML = 
+          `<tr><td colspan="3">Error loading climbs.</td></tr>`;
+      });
   </script>
   
 
