@@ -341,3 +341,92 @@ a:hover {
   text-align: left;
 }
 
+
+
+/* =========================================
+   Climbing Tick List Styles (Compact & Fitted)
+   ========================================= */
+
+.mp-container {
+  /* This centers the table block on the page */
+  margin: 20px auto;
+  /* This forces the container to shrink to the text size */
+  width: fit-content; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.mp-table {
+  border-collapse: collapse;
+  font-size: 0.8rem;         /* Small font size */
+  color: #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  /* No width set here; it will obey the container's fit-content */
+}
+
+/* Header Styling */
+.mp-table thead tr {
+  background-color: #8286ff;
+  color: #ffffff;
+}
+
+.mp-table th {
+  padding: 8px 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  white-space: nowrap; /* Keeps headers on one line */
+}
+
+.mp-table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* --- COLUMN SPECIFIC ALIGNMENT --- */
+
+/* First Column (Route): Left Aligned */
+.mp-table td:first-child, 
+.mp-table th:first-child {
+  text-align: left;
+}
+
+/* Second Column (Date): Right Aligned */
+.mp-table td:last-child, 
+.mp-table th:last-child {
+  text-align: right;
+}
+
+/* Row Hover Effect */
+.mp-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.mp-table tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+/* Bottom border for the last row */
+.mp-table tbody tr:last-of-type td {
+  border-bottom: 2px solid #2c3e50;
+}
+
+/* Link Styling */
+.mp-route-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap; /* Optional: prevents route names from wrapping */
+}
+
+.mp-route-link:hover {
+  color: #4ccfff;
+  text-decoration: underline;
+}
+
+/* Date Text Styling */
+.mp-date {
+  color: #888;
+  white-space: nowrap;
+}

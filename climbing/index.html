@@ -25,19 +25,46 @@
   <main>
     <section style="text-align: center; margin-top: 25px;">
       <h1 style="font-size: 38px; font-weight: normal;">Climbing</h1>
-      <p style="font-size: 12px;">
-        Some climbs I have done on <em>
+      <div class="mp-container">
+        <!-- <h3>Recent climbs <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
+             target="_blank" rel="noopener noreferrer">
+             Mountain Project
+          </a>.</h3> -->
+      <p style="font-size: 18px;">
+        Some recent climbs I have done on <em>
           <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
              target="_blank" rel="noopener noreferrer">
              Mountain Project
           </a>
         </em>.
       </p>
+        <table class="mp-table">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="mp-ticks-body">
+            <tr>
+              <td colspan="2" style="text-align: center;">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <p style="font-size: 12px;">
+        Some climbs I have done on <em>
+          <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
+             target="_blank" rel="noopener noreferrer">
+             Mountain Project
+          </a>
+        </em>.
+      </p> -->
     </section>
 
     <section>
     <div class="gallery-container">
-      <h2 style="font-size: 22px; padding-bottom: 20px;">Gallery</h2>
+      <h2 style="font-size: 22px; padding-bottom: 20px;">Photo Gallery. Click on an album!</h2>
       <div class="album-grid">
         <!-- Vantage - Cooper and Julia -->
         <figure class="album-item" onclick="toggleGallery('vantageCooperJulia')">
@@ -250,6 +277,52 @@
       gallery.style.display = 'flex';
     }
   </script>
-<script src="/js/clean-url.js"></script>
+  
+  <script src="/js/clean-url.js"></script>
+
+  <script>
+    const mpFeedUrl = "https://www.mountainproject.com/rss/user-ticks/201838571";
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(mpFeedUrl)}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('mp-ticks-body');
+        tbody.innerHTML = "";
+
+        data.items.forEach(item => {
+          // Remove "Tick: " prefix
+          const cleanTitle = item.title.replace(/^Tick:\s*/, '');
+
+          // Format Date (e.g., "Sep 27, 2025")
+          const dateObj = new Date(item.pubDate);
+          const dateStr = dateObj.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
+
+          const tr = document.createElement('tr');
+          
+          tr.innerHTML = `
+            <td>
+              <a href="${item.link}" target="_blank" class="mp-route-link">
+                ${cleanTitle}
+              </a>
+            </td>
+            <td class="mp-date">${dateStr}</td>
+          `;
+
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+        document.getElementById('mp-ticks-body').innerHTML = 
+          `<tr><td colspan="2">Error loading.</td></tr>`;
+      });
+  </script>
+  
+
 </body>
 </html>
