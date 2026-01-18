@@ -25,26 +25,33 @@
   <main>
     <section style="text-align: center; margin-top: 25px;">
       <h1 style="font-size: 38px; font-weight: normal;">Climbing</h1>
-  <div class="mp-container">
-    <h3>Some of my recent climbs on  <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
+      <div class="mp-container">
+        <!-- <h3>Recent climbs <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
              target="_blank" rel="noopener noreferrer">
              Mountain Project
-          </a></h3>
-    <table class="mp-table">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Route</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody id="mp-ticks-body">
-        <tr>
-          <td colspan="3">Loading climbs...</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          </a>.</h3> -->
+      <p style="font-size: 18px;">
+        Some recent climbs I have done on <em>
+          <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
+             target="_blank" rel="noopener noreferrer">
+             Mountain Project
+          </a>
+        </em>.
+      </p>
+        <table class="mp-table">
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="mp-ticks-body">
+            <tr>
+              <td colspan="2" style="text-align: center;">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <!-- <p style="font-size: 12px;">
         Some climbs I have done on <em>
           <a href="https://www.mountainproject.com/user/201838571/ike-griss-salas"
@@ -279,26 +286,13 @@
       .then(response => response.json())
       .then(data => {
         const tbody = document.getElementById('mp-ticks-body');
-        tbody.innerHTML = ""; // Clear "Loading..."
+        tbody.innerHTML = "";
 
         data.items.forEach(item => {
-          // --- 1. Clean the Title ---
-          // Remove "Tick: " from the start
-          let cleanTitle = item.title.replace(/^Tick:\s*/, '');
+          // Remove "Tick: " prefix
+          const cleanTitle = item.title.replace(/^Tick:\s*/, '');
 
-          // --- 2. Extract the Grade ---
-          // Look for the last set of parentheses, e.g., "(5.10a)"
-          let grade = "";
-          const gradeMatch = cleanTitle.match(/\((.*?)\)$/);
-          
-          if (gradeMatch) {
-            grade = gradeMatch[1]; // Get the text inside parens
-            // Remove the grade from the title so it doesn't show twice
-            cleanTitle = cleanTitle.replace(gradeMatch[0], '').trim();
-          }
-
-          // --- 3. Format the Date ---
-          // Convert "2025-09-27 22:45:23" to "Sep 27, 2025"
+          // Format Date (e.g., "Sep 27, 2025")
           const dateObj = new Date(item.pubDate);
           const dateStr = dateObj.toLocaleDateString('en-US', {
             year: 'numeric',
@@ -306,26 +300,24 @@
             day: 'numeric'
           });
 
-          // --- 4. Build the Table Row ---
           const tr = document.createElement('tr');
           
           tr.innerHTML = `
-            <td class="mp-date">${dateStr}</td>
             <td>
               <a href="${item.link}" target="_blank" class="mp-route-link">
                 ${cleanTitle}
               </a>
             </td>
-            <td><span class="mp-grade">${grade}</span></td>
+            <td class="mp-date">${dateStr}</td>
           `;
 
           tbody.appendChild(tr);
         });
       })
       .catch(error => {
-        console.error('Error fetching ticks:', error);
+        console.error(error);
         document.getElementById('mp-ticks-body').innerHTML = 
-          `<tr><td colspan="3">Error loading climbs.</td></tr>`;
+          `<tr><td colspan="2">Error loading.</td></tr>`;
       });
   </script>
   
