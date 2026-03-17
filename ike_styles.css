@@ -122,7 +122,7 @@ a:hover {
 /* #aaaaaa */
 #menu ul li a.active {
     background: #7ca8ff00 repeat-x top left;
-    color: git #0000ff;
+    color:#0000ff;
     border-radius: 7.5px;
     font-weight: bold;
     text-decoration: underline;
