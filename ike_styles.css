@@ -58,7 +58,7 @@
   /* 15a6da */
 a {
   color: #0000ff;  /* Set your desired color */
-  text-decoration: none;  /* Optional: remove underline */
+  text-decoration: underline;  /* Optional: remove underline */
 }
 
 
@@ -115,7 +115,7 @@ a:hover {
 
 #menu ul li a:hover {
     background: #91ddf800 repeat-x top left;
-    /* text-decoration: underline; */
+    text-decoration: underline;
     border-radius: 7.5px;
     color: #0000ff;
 }
@@ -125,6 +125,7 @@ a:hover {
     color: #0000ff;
     border-radius: 7.5px;
     font-weight: bold;
+    text-decoration: underline;
 }
 
   .code {
