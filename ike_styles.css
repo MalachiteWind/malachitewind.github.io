@@ -57,7 +57,7 @@
   }
   /* 15a6da */
 a {
-  color: #18ade3;  /* Set your desired color */
+  color: #0000ff;  /* Set your desired color */
   text-decoration: none;  /* Optional: remove underline */
 }
 
@@ -117,12 +117,12 @@ a:hover {
     background: #91ddf800 repeat-x top left;
     /* text-decoration: underline; */
     border-radius: 7.5px;
-    color: #4ccfff;
+    color: #0000ff;
 }
 /* #aaaaaa */
 #menu ul li a.active {
     background: #7ca8ff00 repeat-x top left;
-    color: #4ccfff;
+    color: #0000ff;
     border-radius: 7.5px;
     font-weight: bold;
 }
@@ -367,8 +367,8 @@ a:hover {
 
 /* Header Styling */
 .mp-table thead tr {
-  background-color: #8286ff;
-  color: #ffffff;
+  background-color: #8F93FF;
+  color: #000000;
 }
 
 .mp-table th {
@@ -427,6 +427,6 @@ a:hover {
 
 /* Date Text Styling */
 .mp-date {
-  color: #888;
+  color: #595959;
   white-space: nowrap;
 }
