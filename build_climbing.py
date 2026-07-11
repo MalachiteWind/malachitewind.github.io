@@ -23,10 +23,14 @@ graphics/climbing/<album>/
     01_photo.jpg     # any image; sorted by filename (use 01_, 02_ prefixes to order)
     01_photo.txt     # optional sidecar: caption/alt for that photo
 
+Album order AND inclusion are controlled by graphics/climbing/order.txt: one folder
+name per line, top line = top of the page. ONLY folders listed there are shown, so
+deleting a line hides that album (its files stay on disk). If order.txt is missing,
+every folder is shown alphabetically.
+
 album.txt keys (all optional):
     title:   text shown under the cover tile   (default: folder name)
     cover:   filename of the cover image        (default: cover.* file, else 1st image)
-    order:   integer position in the grid       (default: last; ties break by name)
     photos:  comma-separated filenames giving an explicit lightbox order; any images
              not listed are appended in filename order. Omit to just use filename
              order (with the cover pulled to the front).
@@ -55,7 +59,8 @@ BEGIN_MARKER = (
 END_MARKER = "<!-- END GALLERY -->"
 
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
-KNOWN_ALBUM_KEYS = {"title", "cover", "order", "photos"}
+KNOWN_ALBUM_KEYS = {"title", "cover", "photos"}
+ORDER_FILE = CLIMBING_DIR / "order.txt"
 
 
 def parse_kv(text):
@@ -140,11 +145,6 @@ def load_album(folder):
         cover_named = next((f for f in images if Path(f).stem.lower() == "cover"), None)
         cover = cover_named or images[0]
 
-    try:
-        order = int(meta.get("order", ""))
-    except ValueError:
-        order = 10_000
-
     ordered = order_photos(images, cover, meta.get("photos"))
     photos = []
     for name in ordered:
@@ -158,20 +158,53 @@ def load_album(folder):
         "folder": folder.name,
         "title": title,
         "cover": cover,
-        "order": order,
         "photos": photos,
         "has_album_txt": album_txt.is_file(),
     }
 
 
+def read_order():
+    """Return folder names listed in order.txt (top-to-bottom), or None if absent."""
+    if not ORDER_FILE.is_file():
+        return None
+    names = []
+    for raw in ORDER_FILE.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if line and not line.startswith("#"):
+            names.append(line)
+    return names
+
+
 def find_albums():
+    order = read_order()
+    if order is None:
+        print(
+            "WARNING: graphics/climbing/order.txt not found - showing every album "
+            "folder alphabetically. Create order.txt to control order and inclusion."
+        )
+        folders = [
+            f
+            for f in sorted(CLIMBING_DIR.iterdir(), key=lambda p: p.name.lower())
+            if f.is_dir() and not f.name.startswith(".")
+        ]
+    else:
+        # order.txt is authoritative: only listed folders appear, in listed order.
+        folders = []
+        for name in order:
+            folder = CLIMBING_DIR / name
+            if folder.is_dir():
+                folders.append(folder)
+            else:
+                print(f"WARNING: order.txt lists '{name}' but that folder does not exist - skipping.")
+
     albums = []
-    for folder in sorted(CLIMBING_DIR.iterdir(), key=lambda p: p.name.lower()):
-        if not folder.is_dir() or folder.name.startswith("."):
-            continue
+    for folder in folders:
         album = load_album(folder)
         if album:
             albums.append(album)
+        else:
+            print(f"WARNING: '{folder.name}' has no images - skipping.")
+
     # Ensure unique ids even if two folder names slugify identically.
     seen = {}
     for album in albums:
@@ -180,7 +213,6 @@ def find_albums():
         if n:
             album["id"] = f"{base}-{n + 1}"
         seen[base] = n + 1
-    albums.sort(key=lambda a: (a["order"], a["folder"].lower()))
     return albums
 
 
@@ -271,8 +303,7 @@ def main():
         missing_alt = sum(1 for p in a["photos"] if p["alt"] == a["title"])
         alt_note = f"  [{missing_alt} photo(s) using fallback alt]" if missing_alt else ""
         print(
-            f"  - {a['folder']}: {len(a['photos'])} photo(s), "
-            f"cover={a['cover']}, order={a['order']}{warn}{alt_note}"
+            f"  - {a['folder']}: {len(a['photos'])} photo(s), cover={a['cover']}{warn}{alt_note}"
         )
     print(f"\n{HTML_FILE.name}: {'updated' if changed else 'already up to date'}.")
 
