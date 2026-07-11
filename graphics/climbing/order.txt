@@ -3,6 +3,9 @@
 #   - add a folder name (usually at the top) to include a new album
 #   - delete a line to hide that album (its files stay on disk)
 # After editing, run:  python build_climbing.py
+
+exit-38-july-4-2026 
+index-multi-pitch-sep-27-2025
 vant_coop_julia
 vantage_heidi_kate
 sunshine
