@@ -18,6 +18,10 @@ layout). Image paths adapt to that location automatically: relative `graphics/..
 when the page is at the root, root-absolute `/graphics/...` when it is nested. So
 the same command works on both branches with no hand-editing of `src` paths.
 
+In the nested layout it also root-absolutizes the page's own resources (`/js/...`,
+`/ike_styles.css`, favicon) and ensures `/js/clean-url.js` is loaded, so a merge
+from `main` that reintroduced relative paths is repaired by re-running the script.
+
 No third-party dependencies (standard library only).
 
 --------------------------------------------------------------------------------
@@ -294,7 +298,26 @@ def render(albums, prefix):
     )
 
 
-def splice_into_html(generated, html_file):
+def normalize_nested_resources(source):
+    """In the nested (pretty-url) layout the page sits in /climbing/, so root-relative
+    resource references break. Make them root-absolute and ensure clean-url.js is loaded.
+
+    A merge from `main` (whose climbing.html uses relative paths and has no clean-url.js)
+    clobbers these each time; running the generator on pretty-url repairs them. Only
+    still-relative refs are rewritten, so this is idempotent and safe to re-run."""
+    source = source.replace('src="js/', 'src="/js/')
+    source = source.replace('href="graphics/', 'href="/graphics/')
+    source = source.replace('href="ike_styles.css"', 'href="/ike_styles.css"')
+    if "/js/clean-url.js" not in source:
+        anchor = '<script src="/js/last-updated.js"></script>'
+        if anchor in source:
+            source = source.replace(
+                anchor, '<script src="/js/clean-url.js"></script>\n' + anchor, 1
+            )
+    return source
+
+
+def splice_into_html(generated, html_file, prefix):
     source = html_file.read_text(encoding="utf-8")
     if BEGIN_MARKER not in source or END_MARKER not in source:
         sys.exit(
@@ -305,6 +328,8 @@ def splice_into_html(generated, html_file):
     block = f"{BEGIN_MARKER}\n{generated}\n    {END_MARKER}"
     pattern = re.compile(re.escape(BEGIN_MARKER) + r".*?" + re.escape(END_MARKER), re.DOTALL)
     updated = pattern.sub(lambda _: block, source, count=1)
+    if prefix:  # nested (pretty-url) layout -> also fix page-level resource paths
+        updated = normalize_nested_resources(updated)
     if updated != source:
         html_file.write_text(updated, encoding="utf-8")
     return updated != source
@@ -322,7 +347,7 @@ def main():
         sys.exit(f"ERROR: no album folders with images found in {CLIMBING_DIR}.")
 
     generated = render(albums, prefix)
-    changed = splice_into_html(generated, html_file)
+    changed = splice_into_html(generated, html_file, prefix)
 
     print(f"Generated gallery from {len(albums)} album(s):")
     for a in albums:
