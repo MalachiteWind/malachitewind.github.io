@@ -61,6 +61,15 @@ alt: Tents below the wall at dusk.     # screen-reader description (a11y)
 - No sidecar → the photo has no caption and falls back to the album title for alt.
   Prefer adding a real `alt:` — it's what screen-reader users hear.
 
+## Branches (`main` vs `pretty-url`)
+
+Run `python build_climbing.py` the same way on either branch — it finds the climbing
+page automatically (`climbing.html` at the root on `main`, `climbing/index.html` on
+`pretty-url`) and writes the right image paths for that layout: relative
+`graphics/...` at the root, root-absolute `/graphics/...` when nested. **On
+`pretty-url`, after merging `main`, just re-run the script** to regenerate the gallery
+with `/graphics/...` paths — don't hand-edit the `src` attributes.
+
 ## Notes
 
 - Files starting with `OLD` (e.g. `OLDhero.jpg`) and dotfiles are ignored, so your
