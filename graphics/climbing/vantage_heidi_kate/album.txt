@@ -1,0 +1,4 @@
+title: Entrance to Sunshine Wall, Vantage. March 24, 2025.
+cover: group_sunshine.jpg
+order: 2
+photos: group_sunshine.jpg, kate_belay_ike.jpg, kate_belay_heidi.jpg, group_pitch1.jpg, beloggles.jpg, kate_heidi.jpg, good_doggo.jpg, kate_belay.jpg

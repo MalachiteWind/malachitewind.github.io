@@ -1,0 +1,3 @@
+title: Indian Creek, Sparkling Gefilte Fish 5.10c, November 8, 2022.
+cover: Indian-creek_sparkling_gefilte_fish.jpg
+order: 6

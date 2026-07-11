@@ -1,0 +1,4 @@
+title: Shangri-La, Crouching Tiger 5.10c. September 28, 2024.
+cover: Shangri-La_Crouching_Tiger.jpg
+order: 3
+photos: Shangri-La_Crouching_Tiger.jpg, damien.jpg, tree.jpg, julia.jpg
