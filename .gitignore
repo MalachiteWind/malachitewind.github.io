@@ -3,4 +3,7 @@ env/
 commit.txt
 todo
 OLD*.jpg
+OLD*.jpeg
+OLD*.JPG
+OLD*.png
 .vscode
