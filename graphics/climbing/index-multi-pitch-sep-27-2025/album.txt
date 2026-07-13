@@ -1,2 +1,2 @@
 Trad multipitch at Index adventure. September 27, 2025.
-cover: top.png
+cover: top.jpg
