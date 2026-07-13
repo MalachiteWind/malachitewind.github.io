@@ -1,0 +1,2 @@
+caption: Izzy solving the crux. 
+alt: izzy-solve-crux.
